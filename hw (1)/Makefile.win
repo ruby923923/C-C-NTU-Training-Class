@@ -1,0 +1,28 @@
+# Project: ±M®×1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = hw1.o
+LINKOBJ  = hw1.o
+LIBS     = -L"D:/USER/Downloads/DevCppPortable/MinGW64/lib" -L"D:/USER/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/USER/Downloads/DevCppPortable/MinGW64/include" -I"D:/USER/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"D:/USER/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/USER/Downloads/DevCppPortable/MinGW64/include" -I"D:/USER/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"D:/USER/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/USER/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = CB27519_¬xªY¦p_hw1.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+hw1.o: hw1.c
+	$(CC) -c hw1.c -o hw1.o $(CFLAGS)
